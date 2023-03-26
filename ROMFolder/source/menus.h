@@ -1,3 +1,9 @@
+/*
+Made by GKFireDev
+Last updated Mar. 25th 2023
+
+
+*/
 #pragma once
 
 #include <3ds.h>
