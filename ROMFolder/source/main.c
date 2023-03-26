@@ -11,7 +11,9 @@
 //3DS top screen: 30 rows by 50 columns
 //3DS bottom screen: 30 rows by 40 columns
 
-int MenuSelected = 0;
+short MenuSelected = 0;
+bool finished_g = 1;
+bool status_g = 0;
 
 void update3DS(PrintConsole top, PrintConsole bottom){
 	consoleSelect(&top);
@@ -49,13 +51,13 @@ int main()
 			}
 		} else if(MenuSelected == 1){
 			if(kDown & KEY_B){
-				if(Finished == 1){
+				if(finished_g){
 					MenuSelected = 0;
 					update3DS(top, bottom);
 				}
 			} else if(kDown & KEY_A){
-				if(Attempt == 1) break;
-				Finished = 0;
+				if(status_g) break;
+				finished_g = 0;
 				struct stat st = {0};
 				printf("Looking For ROM folder..\n");
 				if (stat("sdmc:/rom", &st) == -1) {
@@ -92,8 +94,8 @@ int main()
 					mkdir("sdmc:/rom/gba", 0700);
 
 				}
-				Finished = 1;
-				Attempt = 1;
+				finished_g = 1;
+				status_g = 1;
 				printf("Press B or A To Exit");
 			}
 		}

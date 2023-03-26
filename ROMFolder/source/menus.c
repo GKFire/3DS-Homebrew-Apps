@@ -1,10 +1,5 @@
-#include <3ds.h>
-#include <stdio.h>
-
 #include "menus.h"
 
-int Finished = 1;
-int Attempt = 0;
 void MainMenu(PrintConsole topScreen, PrintConsole bottomScreen) {
 
 	consoleSelect(&topScreen);

@@ -1,4 +1,0 @@
-Created Date: Tue March 24 at 11:40am
-
-Version Update v0.2 BETA:
-- Initial Release
